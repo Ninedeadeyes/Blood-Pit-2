@@ -1,0 +1,188 @@
+
+
+body
+{
+background-color:darkgrey;
+}
+
+
+div{
+    border: 1px black solid;
+    box-sizing: border-box;
+    position:absolute;    
+}
+
+h1{
+    margin:0;
+    text-align:center;
+    text-shadow:1px 1px 0 white;
+}
+
+h3{
+    margin:0;
+    text-align:center;
+}
+
+#interface {
+    left: 400px;
+    width: 486px;
+    height:525px;
+    position:relative;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+#text{
+    width:375px;
+    height: 300px;
+    top:50px;
+    left:0;
+    color:white;
+    padding:10px;
+    background-color: rgba(0,0,0,.8);
+    overflow-y: auto;
+}
+
+#foe{
+    width:110px;
+    height:150px;
+    padding:25px;
+    top:50px;
+    left:375px;
+    background-color:rgba(0,0,0,.8);
+    color:white;
+}
+
+#foe-image{
+
+    width:60px;
+    height:50px;
+}
+
+#foe-info{
+    width:110px;
+    height:150px;
+    top:200px;
+    left:375px;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    padding: 10px;
+}
+
+#stats{
+    width:185px;
+    height: 175px;
+    top:350px;
+    left:300px;
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    border: bottom right radius 10px;
+    padding:10px;
+}
+
+#music{
+
+    top:550px ;
+    left:495px;
+
+}
+
+.button-div
+{
+    width:80px;
+    height:55px;
+    border-radius:25px;
+    margin:10px;
+    text-align:center;
+    color:white;
+    line-height:55px;
+
+}
+
+#fight{
+    top:350px;
+    left:0;
+    background-color:darkred;
+}
+
+#herb{
+    top:425px;
+    left:0px;
+    background-color: darkgreen;
+}
+#defend {
+    top:350px;
+    left:100px;
+    background-color:darkblue;   
+}
+#run{
+    top:425px;
+    left:100px;
+    background-color:darkgoldenrod;
+
+}
+
+#focus {
+    top:350px;
+    left:200px;
+    background-color:purple;   
+}
+#hardHit{
+    top:425px;
+    left:200px;
+    background-color:gray;
+
+}
+
+
+
+#ok{
+    width:280px;
+    height:130px;
+    top:350px;
+    left:0;
+    margin:10px;
+    line-height:130px;
+    font-size:1.2em;
+    text-align:center;
+    background-color:darkmagenta;
+    color:white;
+    border-radius:25px;
+}
+
+
+
+#fight:hover
+{
+    background-color:red;
+}
+
+#herb:hover
+{
+    background-color:green;
+}
+
+#defend:hover
+{
+    background-color:blue;
+}
+
+#run:hover
+{
+    background-color:goldenrod;
+}
+
+#ok:hover
+{
+    background-color:magenta;
+}
+
+#focus:hover
+{
+    background-color:magenta;
+}
+
+#hardHit:hover
+{
+    background-color:lightgray;
+}
