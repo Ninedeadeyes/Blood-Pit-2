@@ -376,7 +376,7 @@ function focus()
 {
 
     focusPoint=true;
-    text.innerHTML="You pause for a moment to focus. Your next attack will ignore your opponent's defense ";
+    text.innerHTML="You pause for a moment to focus. Your next attack will ignore your opponent's defense. ";
 
     monsterTurn();
 }
@@ -406,7 +406,7 @@ function doBattle(attacker,defender)
     if (focusPoint===true)
     {
         damage=Math.floor(attack)
-        text.innerHTML+="<p> Your attack penetrates through the demon's defense </p>";
+        text.innerHTML+="<p> Your attack penetrates through the demon's defense. </p>";
         focusPoint=false;
     }
 
@@ -509,7 +509,7 @@ function enemyBattle(attacker,defender)
     {
 
         damage=damage+5
-        text.innerHTML+="<p> The demon performs a strong attack </p>";
+        text.innerHTML+="<p> The demon performs a strong attack. </p>";
     }
 
 
@@ -518,7 +518,7 @@ function enemyBattle(attacker,defender)
     {
     
         damage=damage*2+5   
-        text.innerHTML+="<p> The demon performs a powerful attack </p>";
+        text.innerHTML+="<p> The demon performs a powerful attack. </p>";
     }
 
     else if (crit===true)
@@ -526,7 +526,7 @@ function enemyBattle(attacker,defender)
     {
     
         damage=damage*3+10   
-        text.innerHTML+="<p> The demon performs a critical attack </p>";
+        text.innerHTML+="<p> The demon performs a critical hit. </p>";
     }
 
 
@@ -564,7 +564,7 @@ function enemyBattle(attacker,defender)
     {
     
         strong=true;
-        text.innerHTML+="<p>The next attack from your opponent will be a strong attack </p>";
+        text.innerHTML+="<p>The next attack from your opponent will be a strong attack. </p>";
     
     
     }
@@ -574,7 +574,7 @@ function enemyBattle(attacker,defender)
     {
     
         powerful=true;
-        text.innerHTML+="<p>The next attack from your opponent  will be a powerful attack </p>";
+        text.innerHTML+="<p>The next attack from your opponent  will be a powerful attack. </p>";
     }
 
     else if (chance===3)
@@ -582,7 +582,7 @@ function enemyBattle(attacker,defender)
     {
     
         crit=true;
-        text.innerHTML+="<p>The next attack from your opponent  will be a critical attack </p>";
+        text.innerHTML+="<p>The next attack from your opponent  will be a critical hit. </p>";
     }
     
     else
@@ -601,7 +601,7 @@ function hardBattle(attacker,defender)
     if (attacker.stamina>=5)
     {
 
-        text.innerHTML+="<p>"+attacker.name+" execute the ancient secret technique 'Death Grip' </p>";
+        text.innerHTML+="<p>"+attacker.name+" execute the ancient secret technique of the Shadow Hunter 'DEATH GRIP'. </p>";
         
         let attack=attacker.attack;
         
@@ -614,7 +614,7 @@ function hardBattle(attacker,defender)
         if (focusPoint===true)
             {
                 damage=Math.floor(attack)
-                text.innerHTML+="<p> The crushing attack penetrates through the demon's defense </p>";
+                text.innerHTML+="<p> The crushing attack penetrates through the demon's defense. </p>";
                 focusPoint=false;
             }
         
@@ -719,7 +719,7 @@ function awardPrizes()
         text.innerHtml+= "Herb found!";
         hero.herbs++;
     }
-    text.innerHTML+= "Get ready for your next battle";
+    text.innerHTML+= "Get ready for your next battle.";
     showStats();
     
     showOk(true);
@@ -747,7 +747,7 @@ function gameOver()
     showOk(true);
     okButton.onclick=startGame;
     okButton.innerHtml="You fall in battle, broken and defeated."
-    text.innerHTML+="<p>You defeated "+hero.enemies+" enemies </p>";
+    text.innerHTML+="<p>You defeated "+hero.enemies+" enemies. </p>";
     text.innerHTML+="<h3> Click OK to play again.</h3>";
 
 }
@@ -756,7 +756,7 @@ function youWin()
 {
     showOk(true);
     okButton.onclick=endGame;
-    text.innerHTML="<p>You defeated "+hero.enemies+" demons  </p>";
+    text.innerHTML="<p>You defeated "+hero.enemies+" demons.  </p>";
     text.innerHTML+="<p> As you tore the 100th demon asunder, the crowd cheers your supremacy of the pit. You collect your "+hero.gold+ " gold gained from the slaughter. </p>";
     text.innerHTML+="<p> You walk towards your freedom with bloody hands and a violent grin.</p>";
     text.innerHTML+="<p>The Gods favour your might !!!!!! </p> ";
@@ -768,7 +768,7 @@ function run()
 {
     if (Math.random()<0.34)   // 1/3 chance to escape  if Math.random()*monster.maxHP<hero.maxHP*0.5)
     {
-        text.innerHTML=" You raise your white flag and the crowd approves";
+        text.innerHTML=" You raise your white flag and the crowd approves.";
         okButton.onclick= nextMonster;
         showOk(true);
     }
@@ -798,7 +798,7 @@ function checkLevelUp()
     {
 
         text.innerHTML+="<h3> you have leveled up! </h3>";
-        text.innerHTML+="<h3> You grow stronger with each victory </h3>";
+        text.innerHTML+="<h3> You grow stronger with each victory. </h3>";
 
         let attack =Math.floor(Math.random()*6)+2;
         let defense=Math.floor(Math.random()*6)+2;
