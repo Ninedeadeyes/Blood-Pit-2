@@ -51,6 +51,16 @@ h3{
 
 }
 
+@media screen and (max-width: 486px) {
+
+    #div {
+
+    max-width: 90%;
+    
+    }
+
+}
+
 
 
 #text{
