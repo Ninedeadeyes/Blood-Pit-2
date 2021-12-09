@@ -119,7 +119,7 @@ function showOk(show)
     stats.innerHTML+="<br>Gold: "+hero.gold;
     stats.innerHTML+="<br>Attack: "+hero.attack;
     stats.innerHTML+="<br>Defense: "+hero.defense;
-    stats.innerHTML+="<br>Stamina: "+hero.stamina;
+    stats.innerHTML+="<br>Rage: "+hero.stamina;
     stats.innerHTML+="<br>Level: "+hero.level;
     stats.innerHTML+="<br>Defeated: "+hero.enemies;
     
@@ -677,7 +677,7 @@ function hardBattle(attacker,defender)
 
     else
     {
-        text.innerHTML+=" You do not have enough stamina (require 5 stamina), prepare for pain. ";
+        text.innerHTML+=" You do not have enough Rage (require 5 Rage), prepare for pain. ";
 
     }
 
