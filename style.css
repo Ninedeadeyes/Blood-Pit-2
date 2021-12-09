@@ -24,7 +24,7 @@ h3{
 }
 
 #interface {
-    left: 40%;
+    left: 35%;
     width: 486px;
     height:530px;
     
@@ -37,7 +37,7 @@ h3{
 @media screen and (max-width: 1440px) {
 
     #interface {
-      left:40%;
+      left:35%;
       
     }
 
@@ -46,12 +46,18 @@ h3{
 @media screen and (max-width: 961px) {
 
     #interface {
-      left:0px;
+      left:35%;
     }
 
 }
 
+@media screen and (max-width: 641px) {
 
+    #interface {
+      left:0%;
+    }
+
+}
 
 
 #text{
