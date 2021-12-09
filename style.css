@@ -23,7 +23,7 @@ h3{
     text-align:center;
 }
 
-#interface {
+#interface {                /* alternative way to margin:auto, max-width, to centralised screen */.                                          
     left: 675px;
     width: 486px;
     height:530px;
