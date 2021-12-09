@@ -24,7 +24,7 @@ h3{
 }
 
 #interface {
-    left: 35%;
+    left: 675px;
     width: 486px;
     height:530px;
     
@@ -33,31 +33,39 @@ h3{
     border-radius: 10px;
 }
 
-
+/* smaller laptop screen  */
 @media screen and (max-width: 1440px) {
 
     #interface {
-      left:35%;
+      left:400px;
       
     }
 
 }
 
-@media screen and (max-width: 961px) {
+
+/* tablet */
+@media screen and (max-width: 960px) {
 
     #interface {
-      left:35%;
+      left:180px;
+      
     }
 
 }
 
-@media screen and (max-width: 641px) {
+/* mobile */
+@media screen and (max-width: 676px) {
 
     #interface {
-      left:0%;
+      left:0px;
     }
 
 }
+
+
+
+
 
 
 #text{
