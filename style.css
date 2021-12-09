@@ -24,13 +24,34 @@ h3{
 }
 
 #interface {
-    left: 400px;
+    left: 675px;
     width: 486px;
-    height:525px;
+    height:530px;
+    
     position:relative;
     background-color: bisque;
     border-radius: 10px;
 }
+
+
+@media screen and (max-width: 1440px) {
+
+    #interface {
+      left:400px;
+      
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    #interface {
+      left:0px;
+    }
+
+}
+
+
 
 #text{
     width:375px;
@@ -71,7 +92,7 @@ h3{
 
 #stats{
     width:185px;
-    height: 175px;
+    height: 179px;
     top:350px;
     left:300px;
     background-color: rgba(0,0,0,.8);
@@ -83,7 +104,7 @@ h3{
 #music{
 
     top:550px ;
-    left:495px;
+    left:100px;
 
 }
 
@@ -118,7 +139,6 @@ h3{
 #run{
     top:425px;
     left:100px;
-    font-size:0.9em;
     background-color:darkgoldenrod;
 
 }
@@ -131,7 +151,6 @@ h3{
 #hardHit{
     top:425px;
     left:200px;
-    font-size:0.9em;
     background-color:gray;
 
 }
