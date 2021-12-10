@@ -23,17 +23,15 @@ h3{
     text-align:center;
 }
 
-#interface {                                                      
+#interface {                                                     
     margin:auto;
-    max-width: 486px;   
+    max-width: 486px;
     height:530px;
     
     position:relative;
     background-color: bisque;
     border-radius: 10px;
 }
-
-
 
 
 #text{
@@ -192,3 +190,5 @@ h3{
 {
     background-color:lightgray;
 }
+
+
