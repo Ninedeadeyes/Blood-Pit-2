@@ -23,47 +23,15 @@ h3{
     text-align:center;
 }
 
-#interface {                /* alternative way to margin:auto, max-width, to centralised screen */                                         
-    left: 675px;
-    width: 486px;
+#interface {                                                      
+    margin:auto;
+    max-width: 486px;   
     height:530px;
     
     position:relative;
     background-color: bisque;
     border-radius: 10px;
 }
-
-/* smaller laptop screen  */
-@media screen and (max-width: 1440px) {
-
-    #interface {
-      left:400px;
-      
-    }
-
-}
-
-
-/* tablet */
-@media screen and (max-width: 960px) {
-
-    #interface {
-      left:180px;
-      
-    }
-
-}
-
-/* mobile */
-@media screen and (max-width: 676px) {
-
-    #interface {
-      left:0px;
-    }
-
-}
-
-
 
 
 
