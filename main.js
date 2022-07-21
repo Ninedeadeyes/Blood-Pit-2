@@ -335,15 +335,11 @@ function monsterTurn()
 function doBattle(attacker,defender)
 {
     text.innerHTML+="<p>"+attacker.name+" attacks.</p>";
-
     let attack=attacker.attack;
-
     let dice=Math.floor(Math.random()*12)+1;
-    
     attack=attack+dice;
-
     let damage ;
-
+    
     if (focusPoint===true)
     {
         damage=Math.floor(attack)
@@ -354,7 +350,6 @@ function doBattle(attacker,defender)
     else
     {
         let defense=defender.defense;
-    
         let random2=Math.floor(Math.random()*10)  // only 20% chance of a bonus or penalty  (10% each) add variety to stats  
         
         if (random2===0)
@@ -403,15 +398,10 @@ function doBattle(attacker,defender)
 function enemyBattle(attacker,defender)
 {
     text.innerHTML+="<p>"+attacker.name+" attacks.</p>";
-
     let attack=attacker.attack;
-    
     let dice=Math.floor(Math.random()*12)+1;
-    
     attack=attack+dice;
-
     let defense=defender.defense;
-
     let random2=Math.floor(Math.random()*10)
     
     if (random2===0)
@@ -508,13 +498,9 @@ function hardBattle(attacker,defender)
     {
 
         text.innerHTML+="<p>"+attacker.name+" execute the ancient secret technique of the Shadow Hunter 'DEATH GRIP'. </p>";
-        
         let attack=attacker.attack;
-        
         let dice=Math.floor(Math.random()*10)+10;
-            
         attack=(attack*2)+dice;
-        
         let damage ;
 
         if (focusPoint===true)
@@ -527,7 +513,6 @@ function hardBattle(attacker,defender)
         else
             {       
                 let defense=defender.defense;
-            
                 let random2=Math.floor(Math.random()*10)
                 
                 if (random2===0)
