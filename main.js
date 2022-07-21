@@ -1,4 +1,3 @@
-
 let herbPower=150;
 let root="images/";
 let monster;
@@ -8,20 +7,16 @@ let powerful=false;
 let crit=false;
 let focusPoint=false;
 
-
 //text boes 
-
 let text=document.getElementById("text");
 let foe=document.getElementById("foe-info");
 let stats=document.getElementById("stats");
 
 //image
-
 let image=document.getElementById("foe-image");
 image.src=root+"hero.png";
 
 //buttons
-
 let fightButton=document.getElementById("fight");
 let herbButton=document.getElementById("herb");
 let defendButton=document.getElementById("defend");
@@ -52,7 +47,6 @@ showOk(true);
 
 function getHero()
 {
-
     let hero={
         name:"Nine Dead Eyes",
         hp:100,
@@ -75,7 +69,6 @@ function getHero()
 function endGame()
 {   
     showOk(true);
-
 }   
    
 
@@ -89,29 +82,22 @@ function startGame()
     hero=getHero();
     monster= getMonster();
     showStats();
-
 }    
 
-
 function showOk(show)
-
 {
     if (show)
     {
         okButton.style.display="block";   //css code
-    
     }
     
     else
-
     {
         okButton.style.display="none";
     }
-
 }
 
    function showStats()
-
 {
     stats.innerHTML="HP: "+hero.hp+"/"+hero.hpMax;
     stats.innerHTML+="<br>Herbs: "+hero.herbs;
@@ -127,11 +113,9 @@ function showOk(show)
     foe.innerHTML+="<br>HP: "+monster.hp+"/"+monster.hpMax;
     foe.innerHTML+="<br>Attack: "+monster.attack;
     foe.innerHTML+="<br>Defense: "+monster.defense;
-
 }
 
    function getMonster()
-
 {
     let mon={};
     let pick = Math.floor(Math.random()*(hero.level+1));
@@ -146,15 +130,10 @@ function showOk(show)
             attack:7, 
             defense:3
 
-        };
-            
-        
+        };                    
     }
 
-       
-
     else if  (pick===1)
-    
     {
         mon={
             name:"Spawn of Cthulhu",
@@ -164,13 +143,10 @@ function showOk(show)
             xp:6,
             attack:10, 
             defense:10 
-
         };
-
     }
 
-    else if  (pick===2)
-    
+    else if  (pick===2)    
     {
         mon={
             name:"Death Knight",
@@ -180,14 +156,10 @@ function showOk(show)
             xp:12,
             attack:12, 
             defense:25 
-
         };
-
     }
-
-
-    else if  (pick===3)
     
+    else if  (pick===3)
     {
         mon={
             name:"Rag Man ",
@@ -197,13 +169,10 @@ function showOk(show)
             xp:14,
             attack:20, 
             defense:5 
-
         };
-
     }
 
     else if  (pick===4)
-    
     {
         mon={
             name:"Blood Gazer",
@@ -213,13 +182,10 @@ function showOk(show)
             xp:16,
             attack:18, 
             defense:15 
-
         };
-
     }
 
     else if  (pick===5)
-    
     {
         mon={
             name:"Chaos Engine",
@@ -229,14 +195,10 @@ function showOk(show)
             xp:20,
             attack:25, 
             defense:40 
-
         };
-
     }
 
-
     else if  (pick===6)
-    
     {
         mon={
             name:"Soul Eater",
@@ -246,13 +208,10 @@ function showOk(show)
             xp:22,
             attack:40, 
             defense:10 
-
         };
-
     }
 
     else if  (pick===7)
-    
     {
         mon={
             name:"Harbinger Of Doom ",
@@ -262,13 +221,10 @@ function showOk(show)
             xp:25,
             attack:38, 
             defense:30 
-
         };
-
     }
 
     else if  (pick===8)
-    
     {
         mon={
             name:"Butcher of Tristram",
@@ -278,14 +234,10 @@ function showOk(show)
             xp:40,
             attack:45, 
             defense:150 
-
         };
-
     }
 
-
-    else if  (pick===9)
-    
+    else if  (pick===9)    
     {
         mon={
             name:"Chaos War Machine ",
@@ -295,14 +247,10 @@ function showOk(show)
             xp:50,
             attack:55, 
             defense:250 
-
         };
-
     }
-
-
-    else 
     
+    else 
     {
         mon={
             name:"Chaos War Machine v2",
@@ -313,20 +261,15 @@ function showOk(show)
             attack:65, 
             defense:300 
         };
-
     }
-
-
-
+    
     image.src=root+mon.src;
     mon.hp=mon.hpMax;
     text.innerHTML+="<h3> A " +mon.name+" enter the blood pit. </h3>";
     return mon;
 }
 
-
 function nextMonster()
-
 {
     showOk(false);
     okButton.innerHTML="OK";
@@ -381,14 +324,12 @@ function focus()
     monsterTurn();
 }
 
-
 function monsterTurn()
 {
     enemyBattle(monster,hero);
 
     checkHero();
     showStats();
-
 }
 
 function doBattle(attacker,defender)
@@ -412,7 +353,6 @@ function doBattle(attacker,defender)
 
     else
     {
-
         let defense=defender.defense;
     
         let random2=Math.floor(Math.random()*10)  // only 20% chance of a bonus or penalty  (10% each) add variety to stats  
@@ -428,12 +368,8 @@ function doBattle(attacker,defender)
         }
 
         damage=Math.floor(attack-(defense/2));
-
     }
-
-
     
-
     if (damage>0)
     {
         text.innerHTML+=attacker.name+" deals ";
@@ -448,13 +384,11 @@ function doBattle(attacker,defender)
         text.innerHTML+=defender.name+".";
         defender.hp-=damage;
         defender.hp=Math.max(defender.hp,0);
-
     }
 
     else
     {
         text.innerHTML+=attacker.name+" misses!";
-
     }
 
     attacker.stamina+=1
@@ -464,11 +398,7 @@ function doBattle(attacker,defender)
             attacker.stamina=10
 
         }
-
-
 }
-
-
 
 function enemyBattle(attacker,defender)
 {
@@ -494,43 +424,33 @@ function enemyBattle(attacker,defender)
         defense-=3;
     }
 
-
     if (defender.defending)
         {
             text.innerHTML +="<p>"+defender.name+" is defending.</p>";
             defense*=4;
             defender.defending=false; 
         }
-
     
     let damage=Math.floor(attack-(defense/2));
 
     if (strong===true)
     {
-
         damage=damage+5
         text.innerHTML+="<p> The demon performs a strong attack. </p>";
     }
 
-
     else if (powerful===true)
-
     {
-    
         damage=damage*2+5   
         text.innerHTML+="<p> The demon performs a powerful attack. </p>";
     }
 
     else if (crit===true)
-
     {
-    
         damage=damage*3+10   
         text.innerHTML+="<p> The demon performs a critical hit. </p>";
     }
-
-
-
+    
     if (damage>0)
     {
         text.innerHTML+=attacker.name+" scores ";
@@ -545,13 +465,11 @@ function enemyBattle(attacker,defender)
         text.innerHTML+=defender.name+".";
         defender.hp-=damage;
         defender.hp=Math.max(defender.hp,0);
-
     }
 
     else
     {
         text.innerHTML+=attacker.name+" misses!";
-
     }
 
     strong=false;
@@ -562,42 +480,30 @@ function enemyBattle(attacker,defender)
 
     if (chance===1)
     {
-    
         strong=true;
         text.innerHTML+="<p>The next attack from your opponent will be a strong attack. </p>";
-    
-    
     }
     
     else if (chance===2)
-    
     {
-    
         powerful=true;
         text.innerHTML+="<p>The next attack from your opponent  will be a powerful attack. </p>";
     }
 
     else if (chance===3)
-    
     {
-    
         crit=true;
         text.innerHTML+="<p>The next attack from your opponent  will be a critical hit. </p>";
     }
     
     else
     {
-    
         text.innerHTML+="<p>The next attack from your opponent will be a weak attack </p>";
-    
     }
-
-
 }
 
 function hardBattle(attacker,defender)
 {
-
     if (attacker.stamina>=5)
     {
 
@@ -619,8 +525,7 @@ function hardBattle(attacker,defender)
             }
         
         else
-            {
-        
+            {       
                 let defense=defender.defense;
             
                 let random2=Math.floor(Math.random()*10)
@@ -636,9 +541,7 @@ function hardBattle(attacker,defender)
                     }
         
                 damage=Math.floor(attack-(defense/2));
-        
             }
-        
         
             if (damage>0)
             {
@@ -653,37 +556,27 @@ function hardBattle(attacker,defender)
                 text.innerHTML+=" of damage against ";
                 text.innerHTML+=defender.name+".";
                 defender.hp-=damage;
-                defender.hp=Math.max(defender.hp,0);
-        
+                defender.hp=Math.max(defender.hp,0);        
             }
         
             else
             {
                 text.innerHTML+=attacker.name+" misses!";
-        
             }
         
             attacker.stamina-=5
         
             if (attacker.stamina>10)
                 {
-                    attacker.stamina=10
-        
-                }
-    
- 
-
+                    attacker.stamina=10        
+                }   
     }
 
     else
     {
         text.innerHTML+=" You do not have enough Rage (require 5 Rage), prepare for pain. ";
-
     }
-
 }
-
-
 
 function checkMonster()
 {
@@ -698,7 +591,6 @@ function checkMonster()
     {
         monsterTurn();
     }
-
 }
 
 function awardPrizes()
@@ -728,8 +620,6 @@ function awardPrizes()
     {
      youWin();
     }
-
-    
 }
 
 function checkHero()
@@ -749,7 +639,6 @@ function gameOver()
     okButton.innerHtml="You fall in battle, broken and defeated."
     text.innerHTML+="<p>You defeated "+hero.enemies+" enemies. </p>";
     text.innerHTML+="<h3> Click OK to play again.</h3>";
-
 }
 
 function youWin()
@@ -762,7 +651,6 @@ function youWin()
     text.innerHTML+="<p>The Gods favour your might !!!!!! </p> ";
     text.innerHTML+="<p> Congratulations (Refresh page to play again) </p> ";
     okButton.innerHTML="                                 You Win"                                        ;
-
 }
 function run()
 {
@@ -775,26 +663,20 @@ function run()
     else
     {
     text.innerHTML=" You raise your white flag but the crowd wants more blood. .";
-    monsterTurn();
-    
+    monsterTurn();    
     }
 }
 
 function defend()
-
 {
     text.innerHTML=hero.name+" defends";
     hero.defending=true;
     monsterTurn();
-
 }
 
-
 function checkLevelUp()
-
 {
     if (hero.xp>15*hero.level)
-
     {
 
         text.innerHTML+="<h3> you have leveled up! </h3>";
@@ -812,10 +694,7 @@ function checkLevelUp()
         hero.defense+=defense;
         hero.level++;
         hero.xp=0;
-
-  
+        
         okButton.innerHTML="LEVEL UP!";
-
     }
-
 }
