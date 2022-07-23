@@ -24,6 +24,7 @@ let runButton=document.getElementById("run");
 let hardHitButton=document.getElementById("hardHit");
 let focusButton=document.getElementById("focus");
 let okButton=document.getElementById("ok");
+const bkMusic = document.getElementById("backgroundMusic");
 
 focusButton.onclick=focus;
 hardHitButton.onclick=hardHit;
@@ -39,11 +40,21 @@ info +=" After being caught, you requested a trial by combat.</p> ";
 info +=" <p> You are thrown into the Blood Pit along with 100 demons." 
 info +=" Defeat the 100 demons and win your freedom. </p> ";
 info +="<p> Click ready to begin the slaughter.</p>";
-info +="<p> </p>";
-info +="<p>(...Battle music below optional but recommended...) </p> ";
 
 text.innerHTML =info;
 showOk(true);
+
+class Enemy {
+    constructor(name,src,hpMax,gold,xp,attack,defense){
+        this.name=name;
+        this.src=src;
+        this.hpMax=hpMax;
+        this.gold=gold;
+        this.xp=xp;
+        this.attack=attack;
+        this.defense=defense;
+    }
+}
 
 function getHero()
 {
@@ -71,11 +82,10 @@ function endGame()
     showOk(true);
 }   
    
-
-
 function startGame()
 {
     showOk(false);
+    bkMusic.play();
     okButton.onclick=nextMonster;
     okButton.innerHTML="Ready";
     text.innerHTML="";
@@ -120,147 +130,59 @@ function showOk(show)
     let mon={};
     let pick = Math.floor(Math.random()*(hero.level+1));
     if (pick===0)
-    {
-        mon={
-            name:"Fire Imp",
-            src:"demon1.png",
-            hpMax:40,
-            gold:5,
-            xp:4,
-            attack:7, 
-            defense:3
 
-        };                    
+    {
+        mon= new Enemy ("Fire Imp","demon1.png",40,5,4,7,3);                   
     }
 
     else if  (pick===1)
     {
-        mon={
-            name:"Spawn of Cthulhu",
-            src:"demon2.png",
-            hpMax:60,
-            gold:10,
-            xp:6,
-            attack:10, 
-            defense:10 
-        };
+         mon=new Enemy("Spawn of Cthulhu","demon2.png",60,10,6,10,10);
     }
 
     else if  (pick===2)    
     {
-        mon={
-            name:"Death Knight",
-            src:"demon0.png",
-            hpMax:70,
-            gold:15,
-            xp:12,
-            attack:12, 
-            defense:25 
-        };
+      mon=new Enemy("Death Knight","demon0.png",70,15,12,12,25);
     }
     
     else if  (pick===3)
     {
-        mon={
-            name:"Rag Man ",
-            src:"demon4.png",
-            hpMax:80,
-            gold:20,
-            xp:14,
-            attack:20, 
-            defense:5 
-        };
+        mon=new Enemy("Rag Man ","demon4.png",80,20,14,20,5);
     }
 
     else if  (pick===4)
     {
-        mon={
-            name:"Blood Gazer",
-            src:"demon5.png",
-            hpMax:100,
-            gold:25,
-            xp:16,
-            attack:18, 
-            defense:15 
-        };
+        mon=new Enemy("Blood Gazer","demon5.png",100,25,16,18,15);
     }
 
     else if  (pick===5)
     {
-        mon={
-            name:"Chaos Engine",
-            src:"demon3.png",
-            hpMax:120,
-            gold:35,
-            xp:20,
-            attack:25, 
-            defense:40 
-        };
+        mon=new Enemy("Chaos Engine","demon3.png",120,35,20,25,40);
     }
 
     else if  (pick===6)
     {
-        mon={
-            name:"Soul Eater",
-            src:"demon7.png",
-            hpMax:150,
-            gold:50,
-            xp:22,
-            attack:40, 
-            defense:10 
-        };
+        mon=new Enemy("Soul Eater","demon7.png",150,50,22,40,10);
     }
 
     else if  (pick===7)
     {
-        mon={
-            name:"Harbinger Of Doom ",
-            src:"demon8.png",
-            hpMax:160,
-            gold:70,
-            xp:25,
-            attack:38, 
-            defense:30 
-        };
+        mon=new Enemy("Harbinger Of Doom","demon8.png",160,70,25,38,30);
     }
 
     else if  (pick===8)
     {
-        mon={
-            name:"Butcher of Tristram",
-            src:"demon6.png",
-            hpMax:180,
-            gold:100,
-            xp:40,
-            attack:45, 
-            defense:150 
-        };
+        mon=new Enemy("Butcher of Tristram","demon6.png",180,100,40,45,150);
     }
 
     else if  (pick===9)    
     {
-        mon={
-            name:"Chaos War Machine ",
-            src:"demon9.png",
-            hpMax:200,
-            gold:300,
-            xp:50,
-            attack:55, 
-            defense:250 
-        };
+        mon=new Enemy("Chaos War Machine","demon9.png",200,300,50,55,250);
     }
     
     else 
     {
-        mon={
-            name:"Chaos War Machine v2",
-            src:"demon9.png",
-            hpMax:200,
-            gold:300,
-            xp:60,
-            attack:65, 
-            defense:300 
-        };
+        mon=new Enemy("Chaos War Machine v2","demon9.png",200,300,60,65,300);
     }
     
     image.src=root+mon.src;
@@ -293,7 +215,6 @@ function hardHit()
     text.innerHTML="";
     hardBattle(hero,monster);
     checkMonster();
-    
     showStats();
 }
 
@@ -320,14 +241,12 @@ function focus()
 
     focusPoint=true;
     text.innerHTML="You pause for a moment to focus. Your next attack will ignore your opponent's defense. ";
-
     monsterTurn();
 }
 
 function monsterTurn()
 {
     enemyBattle(monster,hero);
-
     checkHero();
     showStats();
 }
@@ -339,7 +258,7 @@ function doBattle(attacker,defender)
     let dice=Math.floor(Math.random()*12)+1;
     attack=attack+dice;
     let damage ;
-    
+
     if (focusPoint===true)
     {
         damage=Math.floor(attack)
@@ -351,7 +270,6 @@ function doBattle(attacker,defender)
     {
         let defense=defender.defense;
         let random2=Math.floor(Math.random()*10)  // only 20% chance of a bonus or penalty  (10% each) add variety to stats  
-        
         if (random2===0)
         {
             defense+=3;
@@ -391,7 +309,6 @@ function doBattle(attacker,defender)
     if (attacker.stamina>10)
         {
             attacker.stamina=10
-
         }
 }
 
@@ -498,9 +415,13 @@ function hardBattle(attacker,defender)
     {
 
         text.innerHTML+="<p>"+attacker.name+" execute the ancient secret technique of the Shadow Hunter 'DEATH GRIP'. </p>";
+        
         let attack=attacker.attack;
+        
         let dice=Math.floor(Math.random()*10)+10;
+            
         attack=(attack*2)+dice;
+        
         let damage ;
 
         if (focusPoint===true)
@@ -513,6 +434,7 @@ function hardBattle(attacker,defender)
         else
             {       
                 let defense=defender.defense;
+            
                 let random2=Math.floor(Math.random()*10)
                 
                 if (random2===0)
