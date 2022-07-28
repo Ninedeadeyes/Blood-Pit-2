@@ -22,6 +22,11 @@ let hardHitButton=document.getElementById("hardHit");
 let focusButton=document.getElementById("focus");
 let okButton=document.getElementById("ok");
 const bkMusic = document.getElementById("backgroundMusic");
+const endMusic = document.getElementById("ending");
+endMusic.controls = false;
+
+
+
 
 focusButton.onclick=focus;
 hardHitButton.onclick=hardHit;
@@ -475,6 +480,9 @@ function gameOver(){
 function youWin(){
     showOk(true);
     okButton.onclick=endGame;
+    bkMusic.pause();
+    bkMusic.controls = false;
+    endMusic.play();
     text.innerHTML="<p>You defeated "+hero.enemies+" demons.  </p>";
     text.innerHTML+="<p> As you tore the 100th demon asunder, the crowd cheers your supremacy of the pit. You collect your "+hero.gold+ " gold gained from the slaughter. </p>";
     text.innerHTML+="<p> You walk towards your freedom with bloody hands and a violent grin.</p>";
