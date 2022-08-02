@@ -10,3 +10,7 @@ Graphics created using Graphics Gale
 
 
 Special thanks to Stephen J. Wolf (Author) 
+
+based of his game 
+
+https://coding.stephenjwolf.com/cfk2/macode/battlesinkallisor/kallisor.html
