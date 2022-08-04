@@ -192,4 +192,9 @@ h3{
     background-color:lightgray;
 }
 
-
+@media(max-width:500px){
+    
+    #stats{
+        font-size: 14px;
+    }
+}
