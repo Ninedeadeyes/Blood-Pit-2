@@ -24,10 +24,6 @@ let okButton=document.getElementById("ok");
 const bkMusic = document.getElementById("backgroundMusic");
 const endMusic = document.getElementById("ending");
 endMusic.controls = false;
-
-
-
-
 focusButton.onclick=focus;
 hardHitButton.onclick=hardHit;
 fightButton.onclick=fight;
