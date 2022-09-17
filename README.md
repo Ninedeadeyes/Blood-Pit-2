@@ -8,9 +8,17 @@ Music created using BeepBox
 
 Graphics created using Graphics Gale
 
-
 Special thanks to Stephen J. Wolf (Author) 
 
 based of his game 
 
 https://coding.stephenjwolf.com/cfk2/macode/battlesinkallisor/kallisor.html
+
+My version contain additional features such as 
+
+1) My own artwork and music  
+2) 'Death Grip' feature =  Build up 'rage' by attacking to deliver a stronger attack
+3) "Focus" feature = "Miss a turn to penetrate the armour of your enemies
+4) Ending with ending music
+5) You are able to see the power level of the next attack from the enemy hence providing a purpose for 'defend '  
+6) Used OOP for the enemies instead of each type having their own object. ( A bit of refactoring ) 
