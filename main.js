@@ -24,6 +24,7 @@ let okButton=document.getElementById("ok");
 const bkMusic = document.getElementById("backgroundMusic");
 const endMusic = document.getElementById("ending");
 endMusic.controls = false;
+
 focusButton.onclick=focus;
 hardHitButton.onclick=hardHit;
 fightButton.onclick=fight;
@@ -38,8 +39,9 @@ info +=" After being caught, you requested a trial by combat.</p> ";
 info +=" <p> You are thrown into the Blood Pit along with 100 demons." 
 info +=" Defeat the 100 demons and win your freedom. </p> ";
 info +="<p> Click ready to begin the slaughter.</p>";
-
 text.innerHTML =info;
+
+const showOk=(show)=> show===true ? okButton.style.display="block" : okButton.style.display="none";  //css code 
 showOk(true);
 
 class Enemy {
@@ -89,19 +91,7 @@ function startGame(){
     showStats();
 }    
 
-function showOk(show){
-    if (show)
-    {
-        okButton.style.display="block";   //css code
-    }
-    
-    else
-    {
-        okButton.style.display="none";
-    }
-}
-
-   function showStats(){
+function showStats(){
     stats.innerHTML="HP: "+hero.hp+"/"+hero.hpMax;
     stats.innerHTML+="<br>Herbs: "+hero.herbs;
     stats.innerHTML+="<br>XP: "+hero.accXp;
@@ -111,7 +101,6 @@ function showOk(show){
     stats.innerHTML+="<br>Rage: "+hero.stamina;
     stats.innerHTML+="<br>Level: "+hero.level;
     stats.innerHTML+="<br>Defeated: "+hero.enemies;
-    
     foe.innerHTML=monster.name;
     foe.innerHTML+="<br>HP: "+monster.hp+"/"+monster.hpMax;
     foe.innerHTML+="<br>Attack: "+monster.attack;
@@ -121,50 +110,19 @@ function showOk(show){
    function getMonster(){
     let mon={};
     let pick = Math.floor(Math.random()*(hero.level+1));
-    if (pick===0){
-        mon= new Enemy ("Fire Imp","demon1.png",40,5,4,7,3);                   
-    }
 
-    else if  (pick===1){
-         mon=new Enemy("Spawn of Cthulhu","demon2.png",60,10,6,10,10);
-    }
+    pick===0?  mon= new Enemy ("Fire Imp","demon1.png",40,5,4,7,3):
+    pick===1?  mon= new Enemy ("Spawn of Cthulhu","demon2.png",60,10,6,10,10):
+    pick===2?  mon= new Enemy ("Death Knight","demon0.png",70,15,12,12,25):
+    pick===3?  mon= new Enemy ("Rag Man ","demon4.png",80,20,14,20,5):
+    pick===4?  mon= new Enemy ("Blood Gazer","demon5.png",100,25,16,18,15):
+    pick===5?  mon= new Enemy ("Chaos Engine","demon3.png",120,35,20,25,40):
+    pick===6?  mon= new Enemy ("Soul Eater","demon7.png",150,50,22,40,10):
+    pick===7?  mon= new Enemy ("Harbinger Of Doom","demon8.png",160,70,25,38,30):
+    pick===8?  mon= new Enemy ("Butcher of Tristram","demon6.png",180,100,40,45,150):
+    pick===9?  mon= new Enemy ("Chaos War Machine","demon9.png",200,300,50,55,250):
+    pick===10 && (mon=new Enemy("Chaos War Machine v2","demon9.png",200,300,60,65,300));
 
-    else if  (pick===2) {
-      mon=new Enemy("Death Knight","demon0.png",70,15,12,12,25);
-    }
-    
-    else if  (pick===3){
-        mon=new Enemy("Rag Man ","demon4.png",80,20,14,20,5);
-    }
-
-    else if  (pick===4){
-        mon=new Enemy("Blood Gazer","demon5.png",100,25,16,18,15);
-    }
-
-    else if  (pick===5){
-        mon=new Enemy("Chaos Engine","demon3.png",120,35,20,25,40);
-    }
-
-    else if  (pick===6){
-        mon=new Enemy("Soul Eater","demon7.png",150,50,22,40,10);
-    }
-
-    else if  (pick===7){
-        mon=new Enemy("Harbinger Of Doom","demon8.png",160,70,25,38,30);
-    }
-
-    else if  (pick===8){
-        mon=new Enemy("Butcher of Tristram","demon6.png",180,100,40,45,150);
-    }
-
-    else if  (pick===9){
-        mon=new Enemy("Chaos War Machine","demon9.png",200,300,50,55,250);
-    }
-    
-    else {
-        mon=new Enemy("Chaos War Machine v2","demon9.png",200,300,60,65,300);
-    }
-    
     image.src=root+mon.src;
     mon.hp=mon.hpMax;
     text.innerHTML+="<h3> A " +mon.name+" enter the blood pit. </h3>";
@@ -241,15 +199,9 @@ function doBattle(attacker,defender){
     else{
         let defense=defender.defense;
         let random2=Math.floor(Math.random()*10)  // only 20% chance of a bonus or penalty  (10% each) add variety to stats  
-        
-        if (random2===0){
-            defense+=3;
-        }
-    
-        else if (random2===1){
-            defense-=3;
-        }
-        
+        random2===0? defense+=3:
+        random2===1 && (defense-=3);
+
         damage=Math.floor(attack-(defense/2));
     }
     
@@ -272,10 +224,7 @@ function doBattle(attacker,defender){
     }
 
     attacker.stamina+=1
-
-    if (attacker.stamina>10){
-            attacker.stamina=10
-        }
+    attacker.stamina>10&& (attacker.stamina=10);
 }
 
 function enemyBattle(attacker,defender){
@@ -285,14 +234,9 @@ function enemyBattle(attacker,defender){
     attack=attack+dice;
     let defense=defender.defense;
     let random2=Math.floor(Math.random()*10)
-    
-    if (random2===0){
-        defense+=3;
-    }
 
-    else if (random2===1){
-        defense-=3;
-    }
+    random2===0? defense+=3:
+    random2===1 && (defense-=3);   
 
     if (defender.defending){
             text.innerHTML +="<p>"+defender.name+" is defending.</p>";
