@@ -2,7 +2,7 @@
 Tactical Gladiator style RPG. A game equally focus on 'concentration' as well as 'tactics'
 
 
-https://ninedeadeyes.github.io/Blood-Pit-2/ 
+https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
 
 Music created using BeepBox
 
