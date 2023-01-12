@@ -1,5 +1,5 @@
 # Blood-Pit-2
-Tactical Gladiator style RPG. written with less than 500 lines of code. A game equally focus on 'concentration' as well as 'tactics'
+Tactical Gladiator style RPG. written with less than 500 lines of JavaScript code. A game equally focus on 'concentration' as well as 'tactics'
 
 https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
 
