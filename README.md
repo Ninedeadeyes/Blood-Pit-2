@@ -1,6 +1,5 @@
 # Blood-Pit-2
-Tactical Gladiator style RPG. A game equally focus on 'concentration' as well as 'tactics'
-
+Tactical Gladiator style RPG. written with less than 500 lines of code. A game equally focus on 'concentration' as well as 'tactics'
 
 https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
 
@@ -21,4 +20,6 @@ My version contain additional features such as
 3) "Focus" feature = "Miss a turn to penetrate the armour of your enemies in the next turn. 
 4) Ending with ending music
 5) You are able to see the power level of the next attack from the enemy hence providing a purpose for 'defend '  
-6) Used OOP for the enemies instead of each type having their own object. ( A bit of refactoring ) 
+6) General Refactoring using Implemented Arrow Functions and Ternary Operator to reduce code size and implemented
+OOP (Class) for enemy objects 
+ 
