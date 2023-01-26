@@ -23,3 +23,11 @@ My version contain additional features such as
 6) General Refactoring using Implemented Arrow Functions and Ternary Operator to reduce code size and implemented
 OOP (Class) for enemy objects 
  
+ Play the game at 
+
+https://ninedeadeyes.github.io/Blood-Pit-2/
+
+Check out my other games at 
+
+https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
+
