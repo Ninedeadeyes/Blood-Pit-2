@@ -23,6 +23,9 @@ let focusButton=document.getElementById("focus");
 let okButton=document.getElementById("ok");
 const bkMusic = document.getElementById("backgroundMusic");
 const endMusic = document.getElementById("ending");
+const rip= document.getElementById("rip");
+rip.volume = 0.4;
+rip.controls = false;
 endMusic.controls = false;
 
 focusButton.onclick=focus;
@@ -76,12 +79,18 @@ function getHero(){
     return hero;
 }
 
+function stopAudio(sound){
+    sound.pause();
+    sound.currentTime = 0
+  }
+
 function endGame(){   
     showOk(true);
 }   
    
 function startGame(){
     showOk(false);
+    stopAudio(rip);
     bkMusic.play();
     okButton.onclick=nextMonster;
     okButton.innerHTML="Ready";
@@ -360,7 +369,7 @@ function hardBattle(attacker,defender){
     }
 
     else{
-        text.innerHTML+=" You do not have enough Rage (require 5 Rage), prepare for pain. ";
+        text.innerHTML+=" You do not have enough Rage (requires 5 Rage points), prepare for pain. ";
     }
 }
 
@@ -411,6 +420,9 @@ function checkHero(){
 
 function gameOver(){
     showOk(true);
+    image.src=root+"rip.png";
+    stopAudio(bkMusic);
+    rip.play();
     okButton.onclick=startGame;
     okButton.innerHtml="You fall in battle, broken and defeated."
     text.innerHTML+="<p>You defeated "+hero.enemies+" enemies. </p>";
@@ -420,9 +432,10 @@ function gameOver(){
 function youWin(){
     showOk(true);
     okButton.onclick=endGame;
-    bkMusic.pause();
+    stopAudio(bkMusic);
     bkMusic.controls = false;
     endMusic.play();
+    image.src=root+"hero.png";
     text.innerHTML="<p>You defeated "+hero.enemies+" demons.  </p>";
     text.innerHTML+="<p> As you tore the 100th demon asunder, the crowd cheers your supremacy of the pit. You collect your "+hero.gold+ " gold gained from the slaughter. </p>";
     text.innerHTML+="<p> You walk towards your freedom with bloody hands and a violent grin.</p>";
