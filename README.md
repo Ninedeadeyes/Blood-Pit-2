@@ -15,7 +15,7 @@ https://coding.stephenjwolf.com/cfk2/macode/battlesinkallisor/kallisor.html
 
 My version contain additional features such as 
 
-1) My own artwork and music  
+1) My own artwork and music including death music/artwork 
 2) 'Death Grip' feature =  Build up 'rage' by your normal attack to deliver a deadly attack
 3) "Focus" feature = "Miss a turn to penetrate the armour of your enemies in the next turn. 
 4) Ending with ending music
