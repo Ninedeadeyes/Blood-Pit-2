@@ -126,11 +126,10 @@ function showStats(){
     pick===3?  mon= new Enemy ("Rag Man ","demon4.png",80,20,14,20,5):
     pick===4?  mon= new Enemy ("Blood Gazer","demon5.png",100,25,16,18,15):
     pick===5?  mon= new Enemy ("Chaos Engine","demon3.png",120,35,20,25,40):
-    pick===6?  mon= new Enemy ("Soul Eater","demon7.png",150,50,22,40,10):
-    pick===7?  mon= new Enemy ("Harbinger Of Doom","demon8.png",160,70,25,38,30):
-    pick===8?  mon= new Enemy ("Butcher of Tristram","demon6.png",180,100,40,45,150):
-    pick===9?  mon= new Enemy ("Chaos War Machine","demon9.png",200,300,50,55,250):
-    pick===10 && (mon=new Enemy("Chaos War Machine v2","demon9.png",200,300,60,65,300));
+    pick===6 ?  mon= new Enemy ("Soul Eater","demon7.png",150,50,22,40,10):
+    pick===7 ?  mon= new Enemy ("Harbinger Of Doom","demon8.png",160,70,25,38,30):
+    pick===8 || pick===9 ?  mon= new Enemy ("Butcher of Tristram","demon6.png",180,100,40,45,150):
+    mon= new Enemy ("Chaos War Machine","demon9.png",200,300,50,55,250);
 
     image.src=root+mon.src;
     mon.hp=mon.hpMax;
@@ -397,7 +396,7 @@ function awardPrizes(){
     hero.gold+= monster.gold;
     checkLevelUp();
     
-    if (Math.random()<0.25){                                // 25% chance of getting herb
+    if (Math.random()<0.20){                                // 20% chance of getting herb
         text.innerHtml+= "Herb found!";
         hero.herbs++;
     }
